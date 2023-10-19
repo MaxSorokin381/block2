@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Students</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
+	<!-- <script src="index.js" defer></script> -->
+</head>
+<body>
+    <div id="app">
+		<input type="text" name="search" value="" v-model="search"><br>
+		<table class="table table-dark">
+			<tr v-for="item in students"  v-bind:key="item.id"> 
+				<td>{{item.pib}}</td><td><input type="checkbox" v-model="item.zdav"></td><td>{{item.group}}</td><td><a href = "#" @click="deleteStudent(item.id)">Видалити</a></td>
+			</tr>
+		</table>
+
+			<input v-model="student.pib">
+			<input type="checkbox" v-model="student.zdav">
+			<select v-model="student.group">
+				<option value="RPZ 19 1/9">RPZ 19 1/9</option>
+				<option value="RPZ 19 2/9">RPZ 19 2/9</option>
+			</select>
+			<button @click="addStudent()">Add student</button>
+
+	</div>
+<script>src='main.js'</script>
+</body>
+</html>
