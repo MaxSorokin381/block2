@@ -18,6 +18,8 @@
     "vue": "^3.3.6",
     "vue-loader": "^17.3.0",
     "vue-router": "^4.2.5",
+    "vuex": "^4.1.0",
+    "vuex-persistedstate": "^4.1.0",
     "webpack": "^5.89.0"
   }
 }

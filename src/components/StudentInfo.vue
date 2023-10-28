@@ -1,6 +1,7 @@
 <template>
     {{ student.name }}
     {{ student.group }}
+    {{ studentCount }}
     <img :src="student.photo" alt="Student Photo" style="max-width: 200px; height: auto;">
 </template>
 

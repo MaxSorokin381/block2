@@ -1,5 +1,6 @@
 <template>
     <div _id="app">
+        {{ studentsCount }}
         <input type="text" name="search" v-model="search"><br>
         <table class="table table-dark">
             <tr v-for="item in students" v-bind:key="item._id">
@@ -38,6 +39,7 @@
 
 <script>
 import axios from 'axios'
+import { computed } from 'vue'
 
 
 export default {
@@ -58,8 +60,16 @@ export default {
         axios.get('http://34.82.81.113:3000/students').then((response) => {
             console.log(response.data);
             this.students = response.data;
+            this.$store.commit('setCount', this.students.length);
+
         });
     },
+
+    computed: {
+    studentsCount() {
+        return this.$store.getters.getCount
+    }
+     },
 
 
     methods: {
@@ -84,6 +94,7 @@ export default {
         }
     },
 
+    
 
 }
 </script>
